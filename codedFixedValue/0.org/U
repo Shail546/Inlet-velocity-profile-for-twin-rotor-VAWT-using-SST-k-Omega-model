@@ -1,0 +1,79 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    location    "0";
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+    inlet
+    {
+        type        codedFixedValue;
+        value       uniform (0 0 0);
+        
+        name        velocityProfile;
+        code
+        #{
+             const vectorField& Cf = patch().Cf();            
+             vectorField& v = *this;
+             
+             const scalar c = 6.0347;
+             
+             forAll(Cf, faceI)
+             {
+                 
+                 const scalar z = Cf[faceI].z();
+                 
+                 v[faceI] = vector(c*(pow(z,0.122)),0,0);
+             }
+         #};
+      }
+
+    outlet
+    {
+        type        inletOutlet;
+        inletValue  uniform (0 0 0);
+        value       $internalField;
+    }
+
+    walls
+    {
+        type        fixedValue;
+        value       uniform (0 0 0);
+    }
+
+    top
+    {
+        type        slip;
+    }
+
+    bottom
+    {
+        type            noSlip;
+    }
+
+    "proc.*"
+    {
+        type        processor;
+    }
+}
+
+
+// ************************************************************************* //

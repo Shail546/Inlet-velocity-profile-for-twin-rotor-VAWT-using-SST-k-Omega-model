@@ -1,0 +1,190 @@
+
+type sets;
+libs ("libsampling.so");
+setFormat raw;
+interpolationScheme cellPoint;
+
+sets 
+ ( 
+    profile_-1.125
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 -1.125);
+        end         (1.0 1.5 -1.125);
+        nPoints     51;
+    }
+
+    profile_-1.0
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 -1.0);
+        end         (1.0 1.5 -1.0);
+        nPoints     51;
+    }
+
+    profile_-0.875
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 -0.875);
+        end         (1.0 1.5 -0.875);
+        nPoints     51;
+    }
+
+    profile_-0.75
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 -0.75);
+        end         (1.0 1.5 -0.75);
+        nPoints     51;
+    }
+
+    profile_-0.625
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 -0.625);
+        end         (1.0 1.5 -0.625);
+        nPoints     51;
+    }
+
+    profile_-0.5
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 -0.5);
+        end         (1.0 1.5 -0.5);
+        nPoints     51;
+    }
+
+    profile_-0.375
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 -0.375);
+        end         (1.0 1.5 -0.375);
+        nPoints     51;
+    }
+
+    profile_-0.25
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 -0.25);
+        end         (1.0 1.5 -0.25);
+        nPoints     51;
+    }
+
+    profile_-0.125
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 -0.125);
+        end         (1.0 1.5 -0.125);
+        nPoints     51;
+    }
+
+    profile_1e-05
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 1e-05);
+        end         (1.0 1.5 1e-05);
+        nPoints     51;
+    }
+
+    profile_0.125
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 0.125);
+        end         (1.0 1.5 0.125);
+        nPoints     51;
+    }
+
+    profile_0.25
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 0.25);
+        end         (1.0 1.5 0.25);
+        nPoints     51;
+    }
+
+    profile_0.375
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 0.375);
+        end         (1.0 1.5 0.375);
+        nPoints     51;
+    }
+
+    profile_0.5
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 0.5);
+        end         (1.0 1.5 0.5);
+        nPoints     51;
+    }
+
+    profile_0.625
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 0.625);
+        end         (1.0 1.5 0.625);
+        nPoints     51;
+    }
+
+    profile_0.75
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 0.75);
+        end         (1.0 1.5 0.75);
+        nPoints     51;
+    }
+
+    profile_0.875
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 0.875);
+        end         (1.0 1.5 0.875);
+        nPoints     51;
+    }
+
+    profile_1.0
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 1.0);
+        end         (1.0 1.5 1.0);
+        nPoints     51;
+    }
+
+    profile_1.125
+    { 
+        type        uniform; 
+        axis        y; 
+        start       (1.0 -1.5 1.125);
+        end         (1.0 1.5 1.125);
+        nPoints     51;
+    }
+
+);
+
+fields 
+(
+    UMean
+    UPrime2Mean
+    kMean
+    turbulenceProperties:kMean
+); 
+
+//     *********************************************************************** //     
